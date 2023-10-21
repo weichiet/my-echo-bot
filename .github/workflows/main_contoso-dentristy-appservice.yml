@@ -23,11 +23,9 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          # npm install
-          npm install --global yarn
-          yarn install
+          npm install
           npm run build --if-present
-          # npm run test --if-present
+          npm run test --if-present
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -60,5 +58,5 @@ jobs:
         with:
           app-name: 'contoso-dentristy-appservice'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DB78647B323F464681FFE852A1B495DD }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4291FFC0EB924A259C82B7E504B03F8C }}
           package: .
